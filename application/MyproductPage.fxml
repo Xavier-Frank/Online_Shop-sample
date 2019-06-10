@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane layoutY="137.0" prefHeight="665.0" prefWidth="1280.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="HOME">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+          <Tab text="Electronics" />
+            <Tab text="Clothing" />
+            <Tab text="Furniture" />
+            <Tab text="FoodStufff" />
+            <Tab text="Toiletries" />
+            <Tab text="Stationery" />
+        </tabs>
+      </TabPane>
+      <Button layoutX="1208.0" layoutY="69.0" mnemonicParsing="false" onAction="#Admin" prefHeight="45.0" prefWidth="49.0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="35.0" fitWidth="98.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Pictures/onlineimages/settings.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="1143.0" layoutY="67.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="55.0">
+         <graphic>
+            <ImageView fitHeight="37.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../Pictures/onlineimages/cart.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="970.0" layoutY="78.0" mnemonicParsing="false" onAction="#Starting" text="LOGIN" textFill="#245df0">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="1052.0" layoutY="78.0" mnemonicParsing="false" onAction="#signUp" text="SIGNUP" textFill="#70d30c">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Label alignment="CENTER" layoutY="13.0" prefHeight="120.0" prefWidth="937.0" text="ONLIMALL" textFill="#e806af">
+         <font>
+            <Font name="System Bold Italic" size="62.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

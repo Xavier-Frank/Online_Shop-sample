@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ViewProductsController">
+   <children>
+      <BorderPane layoutX="3.0" layoutY="7.0" prefHeight="790.0" prefWidth="1274.0">
+         <top>
+            <TextField alignment="CENTER" editable="false" text="ONLIMALL PRODUCTS" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </TextField>
+         </top>
+         <left>
+            <AnchorPane prefHeight="534.0" prefWidth="98.0" BorderPane.alignment="CENTER" />
+         </left>
+         <bottom>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="606.0" layoutY="57.0" mnemonicParsing="false" onAction="#Back" text="Previuos page" />
+               </children></AnchorPane>
+         </bottom>
+         <right>
+            <AnchorPane prefHeight="534.0" prefWidth="141.0" BorderPane.alignment="CENTER" />
+         </right>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <TableView fx:id="tableView" layoutX="-2.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="439.0" prefWidth="1110.0">
+                     <columns>
+                        <TableColumn fx:id="CATEGORY" prefWidth="136.0" text="CATEGORY" />
+                        <TableColumn fx:id="NAME" minWidth="0.0" prefWidth="125.0" text="NAME" />
+                        <TableColumn fx:id="PRODUCT_ID" minWidth="0.0" prefWidth="103.0" text="PRODUCT_ID" />
+                        <TableColumn fx:id="DESCRIPTION" minWidth="0.0" prefWidth="315.0" text="DESCRIPTION" />
+                        <TableColumn fx:id="QUANTITY" minWidth="0.0" prefWidth="104.0" text="QUANTITY" />
+                        <TableColumn fx:id="WARRANTY" minWidth="0.0" prefWidth="101.0" text="WARRANTY" />
+                        <TableColumn fx:id="PRICE" minWidth="0.0" prefWidth="107.0" text="PRICE" />
+                        <TableColumn fx:id="ImagePath" minWidth="0.0" prefWidth="118.0" text="imgDir" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</Pane>
