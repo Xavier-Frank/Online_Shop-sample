@@ -1,9 +1,6 @@
 package application;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -13,39 +10,47 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class AddUserController {
+public class SignUpButtonController {
+	@FXML
+    private TextField fName;
 
-	@FXML
-	private TextField fName;
-	@FXML
-	private TextField lName;
-	@FXML
-	private TextField userName;
-	@FXML
-	private TextField password;
-	@FXML
-	private TextField password1;
-	@FXML
-	private Label lbl1;
-	@FXML
-	private Label lbl2;
-	@FXML
-	private Label lbl3;
-	@FXML
-	private Label lbl4;
-	@FXML
-	private Label lbl5;
-	@FXML
-	private Label lbl6;
-	@FXML
-	private Button signUp;
+    @FXML
+    private TextField lName;
+
+    @FXML
+    private TextField userName;
+
+    @FXML
+    private PasswordField password;
+
+    @FXML
+    private PasswordField password1;
+
+    @FXML
+    private Button signUp;
+
+    @FXML
+    private Label lbl1;
+
+    @FXML
+    private Label lbl2;
+
+    @FXML
+    private Label lbl3;
+
+    @FXML
+    private Label lbl4;
+
+    @FXML
+    private Label lbl5;
 	
-	public void addUser(ActionEvent event){
-	lbl1.setText("");lbl2.setText("");lbl3.setText("");lbl4.setText("");lbl5.setText("");
+	public void signUpProcess(ActionEvent event){
+		lbl1.setText("");lbl2.setText("");lbl3.setText("");lbl4.setText("");lbl5.setText("");
 		
 		try(Connection connection=DBConnection.getConnection();
 				Statement statement=connection.createStatement(ResultSet.CONCUR_READ_ONLY, ResultSet.TYPE_SCROLL_INSENSITIVE);
@@ -97,7 +102,7 @@ public class AddUserController {
 				stmt.executeUpdate();
 				
 				
-				Parent frontPage=FXMLLoader.load(getClass().getResource("/application/AdminPage.fxml"));
+				Parent frontPage=FXMLLoader.load(getClass().getResource("/application/loginScreen.fxml"));
 				Scene main = new Scene(frontPage);
 				Stage stage =(Stage)((Node)event.getSource()).getScene().getWindow();
 				stage.setScene(main);
@@ -106,14 +111,13 @@ public class AddUserController {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-	}
-			
 		
-			
+		
+	}
 	public void cancel(ActionEvent event) throws Exception {
-
+		
 		try {
-			Parent frontPage=FXMLLoader.load(getClass().getResource("/application/AdminPage.fxml"));
+			Parent frontPage=FXMLLoader.load(getClass().getResource("/application/MyProductPage2.fxml"));
 			Scene main = new Scene(frontPage);
 			Stage stage =(Stage)((Node)event.getSource()).getScene().getWindow();
 			stage.setScene(main);
@@ -127,7 +131,10 @@ public class AddUserController {
 //		
 	}
 	
+		
+			
+		
+			
 	
 
 }
-

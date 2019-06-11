@@ -28,6 +28,8 @@ public class AdminLoginController {
 	
 	@FXML
 	private PasswordField pass;
+	 @FXML
+	    private Label lbl11;
 	
 	public void AdminLogin(ActionEvent event) throws Exception {
 		String USERNAME=txtUsername.getText();
@@ -63,6 +65,7 @@ public class AdminLoginController {
 						Stage stage =(Stage)((Node)event.getSource()).getScene().getWindow();
 						stage.setScene(main);
 						stage.show();
+						
 					}
 					
 						

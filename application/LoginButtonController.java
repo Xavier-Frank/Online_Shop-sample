@@ -13,7 +13,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
-public class LoginController {
+public class LoginButtonController {
 	@FXML
 	private TextField txtUsername;
 	@FXML
@@ -36,39 +36,33 @@ public class LoginController {
 		try(Connection conn = DBConnection.getConnection();
 				Statement statement = conn.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                 ResultSet resultSet = statement.executeQuery("select * from Customer");) {
-	
 
-			
 			if (USERNAME.equals("")) {
 				lbl2.setText("Add a username");
 				lbl2.setTextFill(Color.PALEVIOLETRED);
 				}
-				
 				if (PASSWORD.equals("")) {
 					lbl3.setText("Add a username");
 					lbl3.setTextFill(Color.PALEVIOLETRED);
 				}
-					while (resultSet.next()) {
-						if (!resultSet.getString("USERNAME").equals(USERNAME) || !resultSet.getString("PASSWORD").equals(PASSWORD)) {
-							lbl1.setText("Invalid Password or Username");
-							lbl1.setTextFill(Color.RED);
-						}
-						if (resultSet.getString("USERNAME").equals(USERNAME) && resultSet.getString("PASSWORD").equals(PASSWORD)) {
-							lbl1.setText("Login Successfull");
-							lbl1.setTextFill(Color.GREEN);
-							
-							Parent frontPage=FXMLLoader.load(getClass().getResource("/application/MyProductPage2.fxml"));
-							Scene main = new Scene(frontPage);
-							Stage stage =(Stage)((Node)event.getSource()).getScene().getWindow();
-							stage.setScene(main);
-							stage.show();
-						}
+				while (resultSet.next()) {
+					if (!resultSet.getString("USERNAME").equals(USERNAME) || !resultSet.getString("PASSWORD").equals(PASSWORD)) {
+						lbl1.setText("Invalid Password or Username");
+						lbl1.setTextFill(Color.RED);
+					}
+					if (resultSet.getString("USERNAME").equals(USERNAME) && resultSet.getString("PASSWORD").equals(PASSWORD)) {
+						lbl1.setText("Login Successfull");
+						lbl1.setTextFill(Color.GREEN);
 						
-							
-						}
-				
-					
-				}catch (Exception e) {
+						Parent frontPage=FXMLLoader.load(getClass().getResource("/application/MyProductPage.fxml"));
+						Scene main = new Scene(frontPage);
+						Stage stage =(Stage)((Node)event.getSource()).getScene().getWindow();
+						stage.setScene(main);
+						stage.show();
+					}
+				}				
+		
+		}catch (Exception e) {
 			System.out.println(e);
 			// TODO: handle exception
 		}

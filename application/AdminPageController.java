@@ -5,16 +5,19 @@ import java.io.IOException;
 
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 //Administrative methods
 public class AdminPageController {
+	 @FXML
+	    private Label lbl1;
 	
 	public void addAdmin(ActionEvent event) throws Exception {
 		try {
@@ -24,6 +27,7 @@ public class AdminPageController {
 			Stage stage =(Stage)((Node)event.getSource()).getScene().getWindow();
 			stage.setScene(main);
 			stage.show();
+			
 		} catch (Exception e) {
 			System.out.println(e);
 		}

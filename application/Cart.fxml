@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="803.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FrontPageController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="803.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CartController">
    <children>
       <BorderPane layoutX="-1.0" prefHeight="810.0" prefWidth="1280.0">
          <top>
@@ -20,7 +20,17 @@
             </Label>
          </top>
          <left>
-            <AnchorPane prefHeight="553.0" prefWidth="320.0" BorderPane.alignment="CENTER" />
+            <AnchorPane prefHeight="553.0" prefWidth="349.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="totalButton" layoutX="29.0" layoutY="166.0" mnemonicParsing="false" onAction="#total" prefHeight="26.0" prefWidth="91.0" text="TOTAL" />
+                  <Label fx:id="total" alignment="CENTER" layoutX="139.0" layoutY="165.0" prefHeight="26.0" prefWidth="174.0">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="delete" layoutX="29.0" layoutY="251.0" mnemonicParsing="false" onAction="#delete" prefHeight="26.0" prefWidth="91.0" text="DELETE" />
+                  <Button fx:id="buy" layoutX="35.0" layoutY="327.0" mnemonicParsing="false" onAction="#buy" prefHeight="26.0" prefWidth="91.0" text="BUY" />
+               </children></AnchorPane>
          </left>
          <center>
             <AnchorPane prefHeight="553.0" prefWidth="835.0" BorderPane.alignment="CENTER">
@@ -30,19 +40,20 @@
                       <TableColumn fx:id="category" prefWidth="198.0" text="CATEGORY" />
                       <TableColumn fx:id="name" prefWidth="169.0" text="NAME" />
                         <TableColumn fx:id="productId" prefWidth="142.0" text="PRODUCT_ID" />
-                        <TableColumn fx:id="price" prefWidth="130.0" text="PRICE" />
+                        <TableColumn fx:id="quantity" prefWidth="130.0" text="QUANTITY" />
+                        <TableColumn fx:id="price" prefWidth="142.0" text="PRICE" />
                     </columns>
                   </TableView>
                </children>
             </AnchorPane>
          </center>
          <right>
-            <AnchorPane prefHeight="553.0" prefWidth="320.0" BorderPane.alignment="CENTER" />
+            <AnchorPane prefHeight="553.0" prefWidth="180.0" BorderPane.alignment="CENTER" />
          </right>
          <bottom>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button layoutX="640.0" layoutY="23.0" mnemonicParsing="false" onAction="#Back" text="Previous Page" />
+                  <Button fx:id="backbutton" layoutX="640.0" layoutY="23.0" mnemonicParsing="false" onAction="#Back" text="Previous Page" />
                </children></AnchorPane>
          </bottom>
       </BorderPane>
